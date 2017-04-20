@@ -1,0 +1,37 @@
+% Code to generate a discrete random variable using inverse transform
+% method
+
+% Author: Rajdeep Pinge
+% Date: 18-02-2017
+
+clear;
+close all;
+
+% array of probabilities of random variables
+pj = [0.30 0.20 0.35 0.15];
+
+cumsumPj = cumsum(pj);  % finding cumulative sum of probability
+
+niter = 1000000;      % number of iterations
+
+X = zeros(niter, 1);    % array storing the value of random variable in each iteration
+
+for i = 1 : niter
+    U = rand;       % generating uniform random number
+
+    % iterate over all the probabilities
+    for j = 1:length(cumsumPj)
+        if U < cumsumPj(j)      % if condition matches then that is the value of X
+           X(i) = j;            % assign value
+           break;               % stop here, and proceed to next iteration
+        end
+    end
+end
+
+% Graph of value of X vs its experimental probability
+histogram(X, 100);
+ylabels = linspace(0,1,21);
+set(gca,'YTickLabel',ylabels); 
+title(['Graph of value of X vs its experimental probability for ' num2str(niter) ' iterations'])
+xlabel('value of random variable', 'FontSize', 16)
+ylabel('probability of occurance', 'FontSize', 16)

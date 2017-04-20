@@ -1,0 +1,16 @@
+Interpretation of results of question 4
+
+Since the process is a Martingale, 
+it is expected that the proportion of white balls (Mn) remains same for all time steps.
+
+We perform the experiment for 100 time steps. 
+The experiment is performed a large number of times to remove the stochastic effect.
+
+The average of the proportion of white balls at each time step is taken and plotted w.r.t time.
+
+From the graph q4_Mn.jpg, we observe that the proportion of white balls remains same for all time steps.
+This verifies the theoretical expectation.
+
+Note: Graph q4_Mn_without_ensemble.jpg has fluctuations.
+This is because the experiment has been performed only once. 
+Therefore it may have probabilistic effect of choosing uniform random variable which may not have been eliminated.
