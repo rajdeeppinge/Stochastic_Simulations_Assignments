@@ -9,17 +9,20 @@
 clear;
 close all;
 
-w = 5;      % no. of white balls initially
-b = 7;      % no. of black balls initially
-
 iter = 100000;   % iterations for taking ensemble
 
 n_max = 100;    % maximum time
+
+w = 5;      % no. of white balls initially
+b = 7;      % no. of black balls initially
 
 Mn = zeros(n_max+1, iter);   % array storing proportion of white balls
 
 % loop for ensemble
 for en = 1:iter
+	
+	w = 5;      % no. of white balls initially
+	b = 7;      % no. of black balls initially
 
     Mn(1, en) = w / (w+b);      % proportion of white balls at time = 0      
 
